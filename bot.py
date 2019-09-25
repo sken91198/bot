@@ -1,6 +1,5 @@
 import discord
 import os
-import time
 
 client = discord.Client()
 
@@ -10,10 +9,7 @@ async def on_ready():
     print("로그인중")
     print("준비됨")
     game = discord.Game("명령어 준비됨")
-    while True:
         await client.change_presence(status=discord.Status.dnd, activity=discord.Game(name="{} 개의 서버와  {} 명의 유저와 함께하는중". format(len(client.guilds), len(client.users))))
-        await time.sleep(5)
-        await client.change_presence(status=discord.Status.online, activity=discord.Game(name="{} 개의 서버와  {} 명의 유저와 함께하는중". format(len(client.guilds), len(client.users))))
         
 
 
